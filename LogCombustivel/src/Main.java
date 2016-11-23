@@ -9,7 +9,6 @@ public class Main {
 		File arquivoCombustivel = new File("/Users/wesleygoes/Desafio/LogCombustivel.csv");
 
 		try {
-
 			String linhasArquivoCSV = null;
 			Scanner leitorDados = new Scanner(arquivoCombustivel);
 

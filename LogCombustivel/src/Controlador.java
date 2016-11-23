@@ -13,7 +13,7 @@ public class Controlador {
 			System.out.println(lVeiculos.get(i).getPreco());
 			soma += lVeiculos.get(i).getPreco();
 		}
-		System.out.println("Total "+soma);
+		System.out.println("Total de gás ");
 	}
 
 	 
