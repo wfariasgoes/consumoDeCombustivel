@@ -66,7 +66,7 @@ public class Controlador {
 	private LocalDate buscaPrimeiroAbastecimento(LocalDate data,List<Veiculo> listaDeVeiculos) {
 		 
 		Veiculo lastContact = Collections.max(listaDeVeiculos, Comparator.comparing(c -> c.getData()));
-		System.out.println("max "+lastContact);
+		System.out.println("max "+lastContact.getMarca());
 		return data;
 	}
 
