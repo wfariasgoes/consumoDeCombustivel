@@ -1,13 +1,15 @@
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Veiculo {
+public class Veiculo implements Comparable<Veiculo>{
 
 	private String marca;
 	private String modelo;
 	public double combustivel;
-	public String data;
+	public LocalDate data;
 	public double preco;
 	public double quilometragem;
 	
@@ -29,10 +31,10 @@ public class Veiculo {
 	public void setCombustivel(double combustivel) {
 		this.combustivel = combustivel;
 	}
-	public String getData() {
+	public LocalDate getData() {
 		return data;
 	}
-	public void setData(String data) {
+	public void setData(LocalDate data) {
 		this.data = data;
 	}
 	public double getPreco() {
@@ -46,6 +48,10 @@ public class Veiculo {
 	}
 	public void setQuilometragem(double quilometragem) {
 		this.quilometragem = quilometragem;
+	}
+	@Override
+	public int compareTo(Veiculo o) {
+		return this.data.compareTo(data);
 	}
 
  
