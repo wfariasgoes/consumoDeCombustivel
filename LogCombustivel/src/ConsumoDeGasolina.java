@@ -1,6 +1,7 @@
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 public class ConsumoDeGasolina{
 	private String marcaCarro;
@@ -8,7 +9,7 @@ public class ConsumoDeGasolina{
 	private float carroKM;
 	private double valorGasto;
 	private double litros;
-	private LocalDate dataInicial;
+	private Date dataInicial;
 	private int intervaloDeDias;
 	private double mediaCombutivelKM;
 	private double piorConsumoKM;
@@ -46,10 +47,10 @@ public class ConsumoDeGasolina{
 	public void setLitros(double litros) {
 		this.litros = litros;
 	}
-	public LocalDate getDataInicial() {
+	public Date getDataInicial() {
 		return dataInicial;
 	}
-	public void setDataInicial(LocalDate dataInicial) {
+	public void setDataInicial(Date dataInicial) {
 		this.dataInicial = dataInicial;
 	}
 	public int getIntervaloDeDias() {

@@ -1,4 +1,5 @@
 import java.io.File;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,7 +13,7 @@ public class CarregaListaGastos {
 		if (marcaCarro.equals("Honda") || marcaCarro.equals("Ford")) {
 			veiculo.setMarca(removeAspas(item[0]));
 			veiculo.setModelo(removeAspas(item[1]));
-			veiculo.setData(LocalDate.parse(removeAspas(item[2])));
+			veiculo.setData(Date.valueOf(removeAspas(item[2])));
 			veiculo.setQuilometragem(Double.valueOf(removeAspas(item[3])));
 			veiculo.setCombustivel(Double.valueOf(removeAspas(item[4])));
 			veiculo.setPreco(Double.valueOf(removeAspas(item[5])));

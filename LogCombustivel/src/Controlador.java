@@ -2,11 +2,16 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -37,7 +42,10 @@ public class Controlador {
 			 consumos.add(consumoDeGasolina);
 		}
 		gerarRelatorio(consumos);
+		
 	}
+
+	
 
 	private void gerarRelatorio(List<ConsumoDeGasolina> listaDeConsumo){
 		try{
@@ -63,13 +71,27 @@ public class Controlador {
 	/*
 	 * Método para buscar o primeiro abastecimento
 	 * */
-	private LocalDate buscaPrimeiroAbastecimento(LocalDate data,List<Veiculo> listaDeVeiculos) {
-		 
-		Veiculo lastContact = Collections.max(listaDeVeiculos, Comparator.comparing(c -> c.getData()));
-		System.out.println("max "+lastContact.getMarca());
-		return data;
+	private Date buscaPrimeiroAbastecimento(Date data, List<Veiculo> listaDeVeiculos) {
+		 String parseData = String.valueOf(data);
+       try {
+           DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+           formatter.setLenient(false); //se tolerancia se a data for inválida retorna erro ex:31/02/2009
+           System.out.println(data);
+           Date dataMinima = formatter.parse(parseData);
+           Date dataMaxima = formatter.parse(parseData);
+           Date dataParam = formatter.parse(parseData);
+    
+           //comparando período válido
+           if ((dataParam.before(dataMinima))||(dataParam.after(dataMaxima))){
+               return data;
+           }else{
+               return dataParam;
+           }
+       } catch (ParseException e) {            
+           return null;
+       }        
+       
 	}
-
 	/*
 	 * Método para buscar o pmelhor registro por Km/L
 	 * */

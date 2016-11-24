@@ -9,7 +9,7 @@ public class Veiculo implements Comparable<Veiculo>{
 	private String marca;
 	private String modelo;
 	public double combustivel;
-	public LocalDate data;
+	public Date data;
 	public double preco;
 	public double quilometragem;
 	
@@ -31,10 +31,10 @@ public class Veiculo implements Comparable<Veiculo>{
 	public void setCombustivel(double combustivel) {
 		this.combustivel = combustivel;
 	}
-	public LocalDate getData() {
+	public Date getData() {
 		return data;
 	}
-	public void setData(LocalDate data) {
+	public void setData(Date data) {
 		this.data = data;
 	}
 	public double getPreco() {
